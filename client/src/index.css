@@ -1,0 +1,44 @@
+@import "tailwindcss";
+
+/* Global Styles */
+html,
+body,
+#root {
+  width: 100%;
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Inter", "Segoe UI", sans-serif;
+  background-color: #f3f4f6;
+  color: #111827;
+}
+
+/* Smooth Scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Remove Default Styles */
+* {
+  box-sizing: border-box;
+}
+
+/* Links */
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* Buttons */
+button {
+  cursor: pointer;
+}
+
+/* Images */
+img {
+  max-width: 100%;
+  display: block;
+}
