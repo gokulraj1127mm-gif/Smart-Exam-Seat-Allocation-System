@@ -41,9 +41,9 @@ function SeatAllocation() {
   const fetchInitialData = async () => {
     try {
       const [studentRes, classroomRes, examRes] = await Promise.all([
-        axios.get("http://localhost:5000/api/students", { headers }),
-        axios.get("http://localhost:5000/api/classrooms", { headers }),
-        axios.get("http://localhost:5000/api/exams", { headers }).catch(() => ({ data: [] }))
+        axios.get("https://smart-exam-seat-allocation-system.onrender.com/api/students", { headers }),
+        axios.get("https://smart-exam-seat-allocation-system.onrender.com/api/classrooms", { headers }),
+        axios.get("https://smart-exam-seat-allocation-system.onrender.com/api/exams", { headers }).catch(() => ({ data: [] }))
       ]);
 
       const fetchedStudents = studentRes.data.data || studentRes.data || [];
@@ -88,7 +88,7 @@ function SeatAllocation() {
       const roomRows = activeRoom.rows || 4;
       const roomCols = activeRoom.columns || 4;
 
-      const response = await axios.get(`http://localhost:5000/api/allocation/hall/${cleanHall}`, { headers });
+      const response = await axios.get(`https://smart-exam-seat-allocation-system.onrender.com/api/allocation/hall/${cleanHall}`, { headers });
       const savedAllocations = response.data.data || [];
 
       const allocationLookup = {};
@@ -145,7 +145,7 @@ function SeatAllocation() {
     setLoading(true);
     try {
       const response = await axios.post(
-        "http://localhost:5000/api/allocation/generate",
+        "https://smart-exam-seat-allocation-system.onrender.com/api/allocation/generate",
         { examIds: selectedExamIds, hallNo: String(selectedHall).trim() }, 
         { headers }
       );
@@ -172,7 +172,7 @@ function SeatAllocation() {
     setLoading(true);
     try {
       await axios.post(
-        "http://localhost:5000/api/allocation/clear",
+        "https://smart-exam-seat-allocation-system.onrender.com/api/allocation/clear",
         { hallNo: String(selectedHall).trim() },
         { headers }
       );

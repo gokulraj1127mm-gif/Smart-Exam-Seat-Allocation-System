@@ -25,7 +25,7 @@ function StudentLogin() {
 
     try {
       // Connects directly to the controller login handler
-      const response = await axios.post("http://localhost:5000/api/students/login", {
+      const response = await axios.post("https://smart-exam-seat-allocation-system.onrender.com/api/students/login", {
         email: formData.email,
         password: formData.password,
       });

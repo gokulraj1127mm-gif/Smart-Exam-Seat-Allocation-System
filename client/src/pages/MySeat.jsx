@@ -15,7 +15,10 @@ function MySeat() {
       );
 
       const res = await axios.get(
-        `http://localhost:5000/api/seatallocation/student/${student.regNo}`
+        `https://smart-exam-seat-allocation-system.onrender.com/api/seatallocation/student/${student.regNo}`,
+        {
+          headers: { Authorization: `Bearer ${token}` },
+        }
       );
 
       setSeat(res.data.data);

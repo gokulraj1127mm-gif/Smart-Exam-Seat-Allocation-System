@@ -32,7 +32,7 @@ function StudentDashboard() {
         const token = localStorage.getItem("token");
 
         const response = await axios.get(
-          `http://localhost:5000/api/allocation/student/${student.regNo}`,
+          `https://smart-exam-seat-allocation-system.onrender.com/api/allocation/student/${student.regNo}`,
           {
             headers: {
               Authorization: `Bearer ${token}`,
@@ -212,7 +212,7 @@ function StudentDashboard() {
             {/* Overall Notice Download Footer Row */}
             <div className="mt-8 pt-4 border-t border-slate-100 flex justify-end">
               <a 
-                href="http://localhost:5000/api/reports/overall-seating" 
+                href="https://smart-exam-seat-allocation-system.onrender.com/api/reports/seating-chart" 
                 target="_blank" 
                 rel="noreferrer"
                 className="inline-flex items-center gap-2 text-xs font-bold text-blue-600 hover:text-blue-700 underline tracking-wide transition"

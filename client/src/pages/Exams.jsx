@@ -38,7 +38,7 @@ function Exams() {
   const fetchExams = async () => {
     setIsLoading(true);
     try {
-      const res = await axios.get("http://localhost:5000/api/exams", {
+      const res = await axios.get("https://smart-exam-seat-allocation-system.onrender.com/api/exams", {
         headers: {
           Authorization: `Bearer ${token}`,
         },
@@ -84,7 +84,7 @@ function Exams() {
     };
 
     try {
-      await axios.post("http://localhost:5000/api/exams", payload, {
+      await axios.post("https://smart-exam-seat-allocation-system.onrender.com/api/exams", payload, {
         headers: {
           Authorization: `Bearer ${token}`,
         },
@@ -110,7 +110,7 @@ function Exams() {
   const deleteExam = async (id) => {
     if (!window.confirm("Are you sure you want to permanently delete this exam profile?")) return;
     try {
-      await axios.delete(`http://localhost:5000/api/exams/${id}`, {
+      await axios.delete(`https://smart-exam-seat-allocation-system.onrender.com/api/exams/${id}`, {
         headers: {
           Authorization: `Bearer ${token}`,
         },

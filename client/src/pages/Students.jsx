@@ -39,7 +39,7 @@ function Students() {
   const fetchStudents = async () => {
     setIsLoading(true);
     try {
-      const res = await axios.get("http://localhost:5000/api/students", {
+      const res = await axios.get("https://smart-exam-seat-allocation-system.onrender.com/api/students", {
         headers: {
           Authorization: `Bearer ${token}`,
         },
@@ -72,7 +72,7 @@ function Students() {
     e.preventDefault();
     try {
       const cleanData = preparePayload();
-      await axios.post("http://localhost:5000/api/students", cleanData, {
+      await axios.post("https://smart-exam-seat-allocation-system.onrender.com/api/students", cleanData, {
         headers: {
           Authorization: `Bearer ${token}`,
         },
@@ -106,7 +106,7 @@ function Students() {
     try {
       const cleanData = preparePayload();
       await axios.put(
-        `http://localhost:5000/api/students/${editingId}`,
+        `https://smart-exam-seat-allocation-system.onrender.com/api/students/${editingId}`,
         cleanData,
         {
           headers: {
@@ -126,7 +126,7 @@ function Students() {
   const deleteStudent = async (id) => {
     if (!window.confirm("Are you sure you want to delete this student?")) return;
     try {
-      await axios.delete(`http://localhost:5000/api/students/${id}`, {
+      await axios.delete(`https://smart-exam-seat-allocation-system.onrender.com/api/students/${id}`, {
         headers: {
           Authorization: `Bearer ${token}`,
         },
@@ -146,7 +146,7 @@ function Students() {
     try {
       const data = new FormData();
       data.append("file", excelFile);
-      await axios.post("http://localhost:5000/api/students/import", data, {
+      await axios.post("https://smart-exam-seat-allocation-system.onrender.com/api/students/import", data, {
         headers: {
           Authorization: `Bearer ${token}`,
           "Content-Type": "multipart/form-data",

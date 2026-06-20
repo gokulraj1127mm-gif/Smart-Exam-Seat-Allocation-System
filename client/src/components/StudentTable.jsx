@@ -22,7 +22,7 @@ function StudentTable() {
   const fetchStudents = async () => {
     try {
       const res = await axios.get(
-        "http://localhost:5000/api/students",
+        "https://smart-exam-seat-allocation-system.onrender.com/api/students",
         {
           headers: {
             Authorization: `Bearer ${token}`,
@@ -41,7 +41,7 @@ function StudentTable() {
 
     try {
       await axios.delete(
-        `http://localhost:5000/api/students/${id}`,
+        `https://smart-exam-seat-allocation-system.onrender.com/api/students/${id}`,
         {
           headers: {
             Authorization: `Bearer ${token}`,
@@ -62,7 +62,7 @@ function StudentTable() {
   const handleUpdate = async () => {
     try {
       await axios.put(
-        `http://localhost:5000/api/students/${editingStudent._id}`,
+        `https://smart-exam-seat-allocation-system.onrender.com/api/students/${editingStudent._id}`,
         editingStudent,
         {
           headers: {

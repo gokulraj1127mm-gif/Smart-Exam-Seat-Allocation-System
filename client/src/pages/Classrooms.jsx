@@ -34,7 +34,7 @@ function Classrooms() {
   const fetchClassrooms = async () => {
     setIsLoading(true);
     try {
-      const res = await axios.get("http://localhost:5000/api/classrooms", {
+      const res = await axios.get("https://smart-exam-seat-allocation-system.onrender.com/api/classrooms", {
         headers: {
           Authorization: `Bearer ${token}`,
         },
@@ -57,7 +57,7 @@ function Classrooms() {
   const addClassroom = async (e) => {
     e.preventDefault();
     try {
-      await axios.post("http://localhost:5000/api/classrooms", formData, {
+      await axios.post("https://smart-exam-seat-allocation-system.onrender.com/api/classrooms", formData, {
         headers: {
           Authorization: `Bearer ${token}`,
         },
@@ -79,7 +79,7 @@ function Classrooms() {
   const deleteClassroom = async (id) => {
     if (!window.confirm("Are you sure you want to decommission this classroom space? This will permanently wipe all matrix seat allocations associated with this room.")) return;
     try {
-      await axios.delete(`http://localhost:5000/api/classrooms/${id}`, {
+      await axios.delete(`https://smart-exam-seat-allocation-system.onrender.com/api/classrooms/${id}`, {
         headers: {
           Authorization: `Bearer ${token}`,
         },

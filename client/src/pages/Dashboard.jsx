@@ -62,15 +62,17 @@ function Dashboard() {
 
     try {
       // 1. Fetch Students
-      const studentRes = await axios.get("http://localhost:5000/api/students");
-      
+      const studentRes = await axios.get("https://smart-exam-seat-allocation-system.onrender.com/api/students", {
+        headers: { Authorization: `Bearer ${token}` },
+      });
+
       // 2. Fetch Classrooms
-      const classroomRes = await axios.get("http://localhost:5000/api/classrooms", {
+      const classroomRes = await axios.get("https://smart-exam-seat-allocation-system.onrender.com/api/classrooms", {
         headers: { Authorization: `Bearer ${token}` },
       });
 
       // 3. Fetch Exams
-      const examRes = await axios.get("http://localhost:5000/api/exams", {
+      const examRes = await axios.get("https://smart-exam-seat-allocation-system.onrender.com/api/exams", {
         headers: { Authorization: `Bearer ${token}` },
       });
       
@@ -80,7 +82,7 @@ function Dashboard() {
       // 4. Fetch Allocated Seats
       let allocatedCount = 0;
       try {
-        const allocationRes = await axios.get("http://localhost:5000/api/allocation", {
+        const allocationRes = await axios.get("https://smart-exam-seat-allocation-system.onrender.com/api/allocation", {
           headers: { Authorization: `Bearer ${token}` },
         });
         allocatedCount = allocationRes.data.count || allocationRes.data.data?.length || 0;

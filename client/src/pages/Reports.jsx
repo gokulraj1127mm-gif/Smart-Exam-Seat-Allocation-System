@@ -67,9 +67,9 @@ function Reports() {
       const config = { headers: { Authorization: `Bearer ${token}` } };
 
       const [studentRes, classroomRes, examRes] = await Promise.all([
-        axios.get("http://localhost:5000/api/students", config),
-        axios.get("http://localhost:5000/api/classrooms", config),
-        axios.get("http://localhost:5000/api/exams", config),
+        axios.get("https://smart-exam-seat-allocation-system.onrender.com/api/students", config),
+        axios.get("https://smart-exam-seat-allocation-system.onrender.com/api/classrooms", config),
+        axios.get("https://smart-exam-seat-allocation-system.onrender.com/api/exams", config),
       ]);
 
       const studentsData = studentRes.data.data || studentRes.data || [];
@@ -102,7 +102,7 @@ function Reports() {
     }
     // Securely pass target contexts down as clean query strings to filter out historical artifacts
     window.open(
-      `http://localhost:5000/api/reports/overall-seating?date=${selectedDate}&session=${selectedSession}`,
+      `https://smart-exam-seat-allocation-system.onrender.com/api/reports/overall-seating?date=${selectedDate}&session=${selectedSession}`,
       "_blank"
     );
   };
@@ -110,7 +110,7 @@ function Reports() {
   const downloadStudentReport = async () => {
     try {
       const token = localStorage.getItem("token");
-      const res = await axios.get("http://localhost:5000/api/students", {
+      const res = await axios.get("https://smart-exam-seat-allocation-system.onrender.com/api/students", {
         headers: { Authorization: `Bearer ${token}` },
       });
       const students = res.data.data || res.data || [];
@@ -141,7 +141,7 @@ function Reports() {
   const downloadClassroomReport = async () => {
     try {
       const token = localStorage.getItem("token");
-      const res = await axios.get("http://localhost:5000/api/classrooms", {
+      const res = await axios.get("https://smart-exam-seat-allocation-system.onrender.com/api/classrooms", {
         headers: { Authorization: `Bearer ${token}` },
       });
       const classrooms = res.data.data || res.data || [];
@@ -173,7 +173,7 @@ function Reports() {
   const downloadExamReport = async () => {
     try {
       const token = localStorage.getItem("token");
-      const res = await axios.get("http://localhost:5000/api/exams", {
+      const res = await axios.get("https://smart-exam-seat-allocation-system.onrender.com/api/exams", {
         headers: { Authorization: `Bearer ${token}` },
       });
       const exams = res.data.data || res.data || [];
