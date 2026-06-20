@@ -1,8 +1,9 @@
 import axios from "axios";
 import { authHeader } from "./authService";
 
-const API_URL = "http://localhost:5000/api/classrooms";
 
+const API_URL =
+  "https://smart-exam-seat-allocation-system.onrender.com/api/classrooms";
 // Get All Classrooms
 export const getAllClassrooms = async () => {
   try {

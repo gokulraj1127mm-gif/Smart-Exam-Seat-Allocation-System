@@ -1,6 +1,7 @@
 import axios from "axios";
 
-const API_URL = "http://localhost:5000/api/auth";
+const API_URL =
+  "https://smart-exam-seat-allocation-system.onrender.com/api/auth";
 
 // Login User
 export const loginUser = async (email, password) => {
